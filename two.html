@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/two.css">
+</head>
+<body>
+    <div class="bigbox">
+        <div class="neiron">
+            <div class="reweb"></div>
+            <div class="sun"></div>
+            <div class="biaoti">
+                <div class="text">
+                    <ul>
+                        <li>什</li>
+                        <li>么</li>
+                        <li>是</li>
+                        <li>亚</li>
+                        <li>健</li>
+                        <li>康</li> 
+                        <li>?</li>
+                    </ul> 
+                </div>
+            </div> 
+            <div class="tubiao">
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+    <script>
+        let text = document.querySelector(".text");
+        for(let i = 0 ; i < text.children[0].children.length ; i++) {
+
+            text.children[0].children[i].style.animation = `text_anima 2s 0.${i}s alternate infinite`;
+        }
+
+        let reweb = document.querySelector(".reweb");
+        let next_web = document.querySelector(".btn");
+        reweb.addEventListener("click" , function() {
+            location.replace("index.html");
+        })
+
+        next_web.addEventListener("click" , function() {
+            location.replace("three.html");
+        })
+    </script>
+</html>

@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.bigbox {
+    position: relative;
+    width: 400px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.neiron {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bk.png) 100%/100% no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.reweb {
+    position: absolute;
+    left: 5%;
+    top: 3%;
+    width: 10%;
+    height: 10%;
+    background: url(../img/fanhui.png) 100%/100% no-repeat;
+    cursor: pointer;
+    z-index: 99;
+}
+
+
+.sun {
+    position: absolute;
+    width: 40%;
+    height: 20%;
+    left: -5%;
+    top: -5%;
+    background: url(../img/taiyang.png) 100%/100% no-repeat;
+    animation: sun 2s linear alternate infinite;
+}
+
+@keyframes sun {
+    0%{
+
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+.biaoti {
+    transform: scale(1.2) translate(0 , 30px);
+    width: 80%;
+    height: 20%;
+    background: url(../img/yuanjiaojuxing.png) 100%/100% no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    margin-top: 25%;
+    transform: translate(10px);
+    width: 40%;
+    height: 80%;
+    color: white;
+    text-align: center;
+    letter-spacing: 15px;
+}
+
+.text :nth-child(1) {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.tubiao {
+    width: 85%;
+    height: 90%;
+    background: url(../img/bk4-4.png) 100%/100% no-repeat;
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 20%;
+    background: url(../img/bottom4.png) 100%/100% no-repeat;
+    cursor: pointer;
+    animation: btn 2s linear alternate infinite;
+}
+
+@keyframes btn {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+@keyframes text_anima {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(0 , -10px);
+    }
+}
+
+.xingxing {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50% , 0);
+    width: 60%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.xingxing div {
+    width: 15%;
+    height: 50%;
+    background: url(../img/xingxing1.png) 100%/100% no-repeat;
+}
+
+.wenti {
+    position: absolute;
+    width: 80%;
+    height: 30%;
+    bottom: 20%;
+    left: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.wenti div {
+    width: 40%;
+    height: 15%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    text-align: center;
+    color: red;
+    font-size: 17px;
+}

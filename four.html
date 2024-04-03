@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/four.css">
+</head>
+<body>
+    <div class="bigbox">
+        <div class="neiron">
+            
+            <div class="reweb"></div>
+            <div class="sun"></div>
+
+            <div class="biaoti">
+                <div class="text">
+                    <ul>
+                        <li>亚</li>
+                        <li>健</li>
+                        <li>康</li> 
+                        <li>测</li>
+                        <li>试</li>
+                        <li>结</li>
+                        <li>果</li>
+                    </ul> 
+                </div>
+            </div> 
+
+            <div class="tubiao">
+                <div class="xingxing">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="wenti">
+
+                </div>
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function $(name) {
+        return document.querySelector(name);
+    }
+
+    $(".reweb").onclick = function() {
+        location.replace("three.html")
+    }
+    
+    let text = document.querySelector(".text");
+    for(let i = 0 ; i < text.children[0].children.length ; i++) {
+
+        text.children[0].children[i].style.animation = `text_anima 2s 0.${i}s alternate infinite`;
+
+    }
+
+    xing();
+    function xing() {
+        
+        let val = sessionStorage.getItem("val");
+        
+            let shuju = val.split(",")
+        
+        console.log(shuju)
+        console.log(shuju.length)
+
+        if(shuju.length%2 == 0) {
+            
+            for(let i = 0 ; i < shuju.length/2; i++) {
+                $(".xingxing").children[i].style.background = "url(img/xingxing.png) 100%/100% no-repeat";
+            }
+            
+
+        }else {
+            
+            for(let i = 0 ; i < shuju.length/2 - 1; i++) {
+                $(".xingxing").children[i].style.background = "url(img/xingxing.png) 100%/100% no-repeat";
+            }
+            $(".xingxing").children[Math.floor(shuju.length/2)].style.background = "url(img/banxing.png) 100%/100% no-repeat";
+
+        }
+
+        let wenti = document.querySelector(".wenti");
+        let wenti_arr = ["经常感冒" , "失眠多梦" , "精神压力大" , "注意力不集中" , "记忆力下降" , "焦躁不安" , "恐惧胆怯" , "人际关系紧张" , "睡眠紊乱" , "腰酸背痛"];
+        for(let i = 0 ; i < shuju.length ; i++) {
+
+            let div = document.createElement("div");
+            wenti.appendChild(div)
+
+            wenti.children[i].innerHTML = wenti_arr[shuju[i]];
+        }
+    }
+
+    $(".btn").onclick = function() {
+        location.replace("five.html");
+    }
+</script>
+</html>

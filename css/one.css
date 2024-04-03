@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.bigbox {
+    position: relative;
+    width: 400px;
+    height: 700px;
+}
+
+.neiron {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/beijing.png) 100%/100% no-repeat;
+}
+
+.music {
+    position: absolute;
+    width: 10%;
+    height: 7%;
+    top: 3%;
+    right: 5%;
+    background: url(../img/yinle.png) 100%/100% no-repeat;
+}
+
+.zhuqiu {
+    position: absolute;
+    left: 10%;
+    top: 8%;
+    width: 10%;
+    height: 6%;
+    background: url(../img/ball.png) 100%/100% no-repeat;
+    animation: zhuqiu 3s linear alternate infinite;
+}
+
+@keyframes zhuqiu {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(300px , 0);
+    }
+}
+
+.btn {
+    position: absolute;
+    bottom: 10%;
+    left: 27%;
+    width: 50%;
+    height: 15%;
+    background: url(../img/bottom1.png) 100%/100% no-repeat;
+    animation: btn 2s linear alternate infinite ;
+    cursor: pointer;
+}
+
+@keyframes btn {
+    0%{
+        transform: scale(1);
+    }100%{
+        transform: scale(0.8);
+    }
+}
+
+.zhedan {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jdt {
+    position: relative;
+    width: 80%;
+    height: 5%;
+    background: url(../img/yuanjiaojuxing.png) 100%/100% no-repeat;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.jdt_nei {
+    position: absolute;
+    width: 95%;
+    height: 85%;
+    background: rgb(214, 201, 81);
+    border-radius: 50px;
+    transform: translate(-300px);
+    animation: jdt_nei 5s linear forwards;
+
+}
+
+@keyframes jdt_nei {
+    0%{
+        transform: translate(-300px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+.jdt_text {
+    line-height: 25px;
+    font-size: 20px;
+    color: white;
+    z-index: 99;
+}

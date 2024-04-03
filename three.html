@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/three.css">
+</head>
+<body>
+    <div class="bigbox">
+        <div class="neiron">
+            
+            <div class="reweb"></div>
+            <div class="sun"></div>
+
+            <div class="biaoti">
+                <div class="text">
+                    <ul>
+                        <li>亚</li>
+                        <li>健</li>
+                        <li>康</li> 
+                        <li>测</li>
+                        <li>试</li>
+                    </ul> 
+                </div>
+            </div> 
+
+            <div class="tubiao">
+                <div class="dati"> 
+                    <div class="wenti"><b>A</b>经常感冒</div>
+                    <div class="wenti"><b>B</b>失眠多梦</div>
+                    <div class="wenti"><b>C</b>精神压力大</div>
+                    <div class="wenti"><b>D</b>注意力不集中</div>
+                    <div class="wenti"><b>E</b>记忆力下降</div>
+                    <div class="wenti"><b>F</b>焦躁不安</div>
+                    <div class="wenti"><b>G</b>恐惧胆怯</div>
+                    <div class="wenti"><b>H</b>人际关系紧张</div>
+                    <div class="wenti"><b>I</b>睡眠紊乱</div>
+                    <div class="wenti"><b>J</b>腰酸背痛</div>
+                </div>
+                <div class="btn"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    let text = document.querySelector(".text");
+    for(let i = 0 ; i < text.children[0].children.length ; i++) {
+
+        text.children[0].children[i].style.animation = `text_anima 2s 0.${i}s alternate infinite`;
+    }
+
+
+    let dati = document.querySelector(".dati");
+    let num = 0;
+    let arr = [];
+
+    for(let i = 0 ; i < dati.children.length ; i++) {
+        dati.children[i].onclick = function() {
+            if(this.style.background == `url("img/gou.png") 100% center / 100% no-repeat`) {
+                
+                this.style.background = ``;
+                num--;
+
+                // 在数组找下标然后截取
+                arr.splice(arr.indexOf(i) , 1);
+                console.log(arr);
+            }else {
+                this.style.background = `url(img/gou.png) 100%/100% no-repeat`;
+                num++;
+                arr.push(i)
+                console.log(arr);
+                
+            }
+            
+
+        }
+        
+    }
+
+    
+    let reweb = document.querySelector(".reweb");
+    let next_web = document.querySelector(".btn");
+    reweb.addEventListener("click" , function() {
+        location.replace("two.html");
+    })
+
+    next_web.addEventListener("click" , function() {
+        sessionStorage.setItem("val" , arr);
+
+        location.replace("four.html");
+    })
+</script>
+</html>
